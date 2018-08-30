@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "update": "jest --updateSnapshot"
+  },
+  "dependencies": {
+    "jest": "^23.5.0",
+    "jest-image-snapshot": "^2.5.0",
+    "puppeteer": "^1.7.0"
+  }
+}
