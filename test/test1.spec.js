@@ -1,33 +1,31 @@
 const devices = require('puppeteer/DeviceDescriptors');
+const iPhone6 = devices['iPhone6'];
 
 const timeout = 5000;
-const searchLocator = 'div[id="sb_ifc0"]';
+const searchLocator = 'input[title="Search"]';
 const searchBtnLocator = 'input[type="submit"]';
 const resultStatusLocator = '#resultStats';
 
-describe('Google Home Page Test', () => {
+describe('Page Test', () => {
         let page;
         beforeAll(async () => {
             page = await global.__BROWSER__.newPage();
-            await page.goto('https://google.com');
+         //   await page.emulate(iPhone6);
+            await page.setViewport({width: 1440, height: 900});
+            await page.goto('https://github.com/garris/BackstopJS/issues');
         }, timeout);
 
         afterAll(async () => {
             await browser.close();
         });
 
-        it('should contain google test', async () => {
+        it('should contain text test', async () => {
             let text = await page.evaluate(() => document.body.textContent);
-            expect(text).toContain('google');
+            expect(text).toContain('New issue');
         });
 
-        it('should match home page image', async ()=> {
-            await page.focus(searchLocator);
-            await page.type(searchLocator, 'java');
-            await page.click(searchBtnLocator);
-            await page.waitForSelector(resultStatusLocator);
-
-            const image = await page.screenshot();
+        it('should match image snapshot', async ()=> {
+            const image = await page.screenshot({fullPage: true});
             expect(image).toMatchImageSnapshot();
         })
     },
