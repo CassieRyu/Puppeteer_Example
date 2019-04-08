@@ -1,15 +1,9 @@
 # Puppeteer_Example
 Framework: Jest and Puppeteer for web functional test. Using jest-image-snapshot for visual testing.
 
-## Framework
+## Environment
 ```
-$ npm i jest
-```
-```
-$ npm i puppeteer
-```
-```
-$ npm i jest-image-snapshot
+> npm install
 ```
 ## Structure
 * `jest.config.js` is main config file;
