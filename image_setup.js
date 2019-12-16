@@ -1,3 +1,4 @@
+require("expect-puppeteer");
 const { configureToMatchImageSnapshot } = require('jest-image-snapshot');
 
 const customConfig = { threshold: 0 };
