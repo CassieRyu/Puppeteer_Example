@@ -2,7 +2,7 @@
 const APP = process.env.TEST_ENV;
 const URL_CONFIGS = {
     local: `http://${process.env.DOCKER ? "host.docker.internal" : "localhost"}:3030`,
-    dev: "http://172.31.31.156",
+    dev: "https://github.com/CassieRyu/API-RestAssured",
 };
 
 export const waitAndClick = async (selector) => {
