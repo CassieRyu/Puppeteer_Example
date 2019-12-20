@@ -1,3 +1,4 @@
+require("puppeteer");
 require("expect-puppeteer");
 require ("jest-environment-puppeteer");
 const devices = require('puppeteer/DeviceDescriptors');
@@ -9,7 +10,7 @@ const searchBtnLocator = 'input[type="submit"]';
 const resultStatusLocator = '#resultStats';
 
 describe('Page Test', () => {
-    const page = jestPuppeteer.page;
+
     beforeAll( async () => {
         await jestPuppeteer.resetPage()
         //   await page.emulate(iPhone6);
@@ -20,6 +21,7 @@ describe('Page Test', () => {
     // afterAll(async () => {
     //     await browser.close();
     // });
+
 
     it('should contain text test', async () => {
         let text = await page.evaluate(() => document.body.textContent);
