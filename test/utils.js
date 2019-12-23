@@ -1,4 +1,5 @@
 
+
 const APP = process.env.TEST_ENV;
 const URL_CONFIGS = {
     local: `http://${process.env.DOCKER ? "host.docker.internal" : "localhost"}:3030`,

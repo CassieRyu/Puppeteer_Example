@@ -32,6 +32,16 @@
 
 const config = {
 
+    transform: {
+        "^.+\\.vue$": "vue-jest",
+        "^.+\\.(js|jsx)?$": "babel-jest",
+        "^.+\\.tsx?$": "ts-jest"
+    },
+    transformIgnorePatterns: ["<rootDir>/node_modules/"],
+    moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+    moduleNameMapper: {
+        "^test/(.*)$": "<rootDir>/$1",
+    },
     globalSetup: "jest-environment-puppeteer/setup",
     globalTeardown: "jest-environment-puppeteer/teardown",
     testEnvironment: "jest-environment-puppeteer",
