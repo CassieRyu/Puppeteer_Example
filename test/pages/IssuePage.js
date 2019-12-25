@@ -1,28 +1,23 @@
+const { BASE_URL, utils } = require("../utils");
+const issuePath = BASE_URL + "/issues";
 
-import { BASE_URL, waitAndClick } from "../utils";
-
-export class IssuePage {
-    issuePath = BASE_URL + "/issues";
-    page;
-
-    constructor(page) {
-        this.page = page;
-    }
+const IssuePage = {
 
     async open() {
-        return this.page.goto(this.issuePath);
-    }
+        return page.goto(issuePath);
+    },
 
     async getPage() {
-        return this.page.waitForSelector("#js-repo-pjax-container");
-    }
+        return page.waitForSelector("#js-repo-pjax-container");
+    },
 
     async createAnIssue() {
-        return waitAndClick('a[href*="/issues/new"]');
+        return utils.waitAndClick('a[href*="/issues/new"]');
+    },
+
+    async newIssueBtnText() {
+        return utils.getInnerText('details > summary.btn');
     }
 
-    async newIssueBtn() {
-        return this.page.waitForSelector('[class="btn btn-primary"]')
-    }
-
-}
+};
+module.exports={ IssuePage };
