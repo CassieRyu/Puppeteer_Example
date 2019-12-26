@@ -6,9 +6,9 @@ const config = {
     moduleNameMapper: {
         "^test/(.*)$": "<rootDir>/$1",
     },
-    globalSetup: "jest-environment-puppeteer/setup",
-    globalTeardown: "jest-environment-puppeteer/teardown",
-    testEnvironment: "jest-environment-puppeteer",
+    // globalSetup: "jest-environment-puppeteer/setup",
+    // globalTeardown: "jest-environment-puppeteer/teardown",
+    // testEnvironment: "jest-environment-puppeteer",
     setupFilesAfterEnv: ["<rootDir>/image_setup.js"],
     testRegex: "./test/specs/.*.spec.js",
     reporters: [
@@ -19,8 +19,8 @@ const config = {
                 pageTitle: "e2e-test-report"
             }
         ]
-    ]
-     // preset: "jest-puppeteer"
+    ],
+    preset: process.env.DOCKER ? "jest-puppeteer-docker" : "jest-puppeteer"
 
 };
 module.exports = config;

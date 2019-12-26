@@ -32,7 +32,6 @@ const utils = {
         await page.click("form");
         await page.waitFor(500);
     }
-
 };
 
 module.exports = {utils, BASE_URL};
