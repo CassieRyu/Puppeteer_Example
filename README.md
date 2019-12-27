@@ -9,6 +9,8 @@ Framework: Jest and Puppeteer for web functional test. Using jest-image-snapshot
 * `jest.config.js` is main config file;
 * `image_setup.js` is visual testing config file with jest-image-snapshot;
 ## Execution
-* ```npm run test``` for test scripts execution;
+* ```npm run test``` for test execution in local env;
 * test environment can be changed in `TEST_ENV` command;
-* ```npm run update``` for updating image baseline;
+* ```npm run test:docker``` for test execution in docker;
+* ```npm run update``` for updating image baseline in docker;
+### Recommend to run in docker, image matching would be more stable

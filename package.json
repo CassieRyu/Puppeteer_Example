@@ -2,9 +2,9 @@
   "name": "puppeteer-demo",
   "private": true,
   "scripts": {
-    "test:dev": "TEST_ENV=dev DOCKER=false jest --config jest.config.js",
-    "test:dev:docker": "TEST_ENV=dev DOCKER=true PUPPETEER_CHROMIUM_REVISION=697891 jest --config jest.config.js",
-    "update": "jest --updateSnapshot"
+    "test": "TEST_ENV=dev DOCKER=false jest --config jest.config.js",
+    "test:docker": "TEST_ENV=dev DOCKER=true PUPPETEER_CHROMIUM_REVISION=697891 jest --config jest.config.js",
+    "update": "TEST_ENV=dev DOCKER=true PUPPETEER_CHROMIUM_REVISION=697891 jest --updateSnapshot"
   },
   "dependencies": {
     "@types/expect-puppeteer": "^3.3.3",
