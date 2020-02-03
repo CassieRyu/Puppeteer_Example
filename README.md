@@ -1,5 +1,9 @@
 # Puppeteer_Example
 Framework: Jest and Puppeteer for web functional test. Using jest-image-snapshot for visual testing.
+## Feature
+* Combine visual testing
+* Support different environments
+* Run in docker
 
 ## Environment
 ```
